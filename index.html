@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans    //语言 中文">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,10 +80,10 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="juvenile的四维空间    &#x2F;&#x2F;你博客的名字">
+<meta property="og:title" content="juvenile的四维空间">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
-<meta property="og:site_name" content="juvenile的四维空间    &#x2F;&#x2F;你博客的名字">
-<meta property="og:locale" content="zh-Hans    &#x2F;&#x2F;语言 中文">
+<meta property="og:site_name" content="juvenile的四维空间">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 
 
@@ -100,7 +100,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -120,7 +120,7 @@
 
 
 
-  <title>juvenile的四维空间    //你博客的名字</title>
+  <title>juvenile的四维空间</title>
   
 
 
@@ -132,7 +132,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans    //语言 中文">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -151,7 +151,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">juvenile的四维空间    //你博客的名字</span>
+        <span class="site-title">juvenile的四维空间</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -228,16 +228,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/first/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/%E5%85%B3%E4%BA%8Ewebpack%E5%8D%87%E7%BA%A7%E5%90%8E%E7%9A%84%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="juvenile  //你的名字">
+      <meta itemprop="name" content="juvenile">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="juvenile的四维空间    //你博客的名字">
+      <meta itemprop="name" content="juvenile的四维空间">
     </span>
 
     
@@ -247,7 +247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/18/first/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/10/24/%E5%85%B3%E4%BA%8Ewebpack%E5%8D%87%E7%BA%A7%E5%90%8E%E7%9A%84%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/" itemprop="url">关于webpack升级后的操作说明</a></h1>
         
 
         <div class="post-meta">
@@ -257,10 +257,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-18T14:41:50+08:00">
-                2019-10-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T14:46:38+08:00">
+                2019-10-24
               </time>
             
 
@@ -299,19 +299,181 @@
       
         
           
-            <p>氨基酸的雷克萨建档立卡交流电卡势均力敌哈搜if阿红IDhi安慰奖赫拉克if级啊开了房哈萨克了就好打可接受的</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <p>这个问题是由于webpack升级导致的，在最新的webpack4中，要想将hello.js打包到hello.bundle.js,要使用如下命令：</p>
+<p>webpack hello.js -o hello.bundle.js –mode development</p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+    
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/%E5%85%B3%E4%BA%8Esourcemap%E7%9A%84%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/24/%E5%85%B3%E4%BA%8Esourcemap%E7%9A%84%E4%BB%8B%E7%BB%8D/" itemprop="url">关于sourcemap的介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T13:58:22+08:00">
+                2019-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Source Map入门教程<br>Fundebug<br>Fundebug<br>一行代码搞定BUG监控：<a href="http://www.fundebug.com" target="_blank" rel="noopener">www.fundebug.com</a><br>Source Map入门教程 - Fundebug - 博客园</p>
+<p>部署前端之前，开发者通常会对代码进行打包压缩，这样可以减少代码大小，从而有效提高访问速度。然而，压缩代码的报错信息是很难Debug的，因为它的行号和列号已经失真。这时就需要Source Map来还原真实的出错位置了。</p>
+<p>为啥变换代码？</p>
+<p>前端代码越来越复杂的情况下，开发者通常会使用webpack、UglifyJS2等工具对代码进行打包变换，这样可以减少代码大小，有效提高访问速度。关于变换代码的原因，这里不妨引用一下大神阮一峰的JavaScript Source Map 详解:</p>
+<p>压缩，减小体积。比如jQuery 1.9的源码，压缩前是252KB，压缩后是32KB。<br>多个文件合并，减少HTTP请求数。<br>其他语言编译成JavaScript。最常见的例子就是CoffeeScript。</p>
+<p>如何变换代码？</p>
+<p>下面是一个简单的“hello World”程序hello.js</p>
+<p>function sayHello()<br>{<br>    var name = “Fundebug”;<br>    var greeting = “Hello, “ + Name;<br>    console.log(greeting);<br>}</p>
+<p>sayHello();</p>
+<p>使用UglifyJS2对源代码进行压缩变换:</p>
+<p>uglifyjs hello.js <br>         -m toplevel=true <br>         -c unused=true,collapse_vars=true <br>         -o hello.min.js<br>压缩后的代码hello.min.js</p>
+<p>function o(){var o=”Hello, “+Name;console.log(o)}o();</p>
+<p>为啥需要Source Map?</p>
+<p>使用Firefox执行hello.js的报错信息是这样:</p>
+<p>ReferenceError: Name is not defined<br>    sayHello file:///Users/fundebug/sourcemap-tutorial/hello.js:4:9<br>    &lt;匿名&gt; file:///Users/fundebug/sourcemap-tutorial/hello.js:8:1</p>
+<p>而hello.min.js的报错信息是这样:</p>
+<p>ReferenceError: Name is not defined<br>    o file:///Users/fundebug/sourcemap-tutorial/hello.min.js:1:18<br>    &lt;匿名&gt; file:///Users/fundebug/sourcemap-tutorial/hello.min.js:1:59</p>
+<p>对比压缩前后的出错信息，我们会发现，错误行号和列号已经失真，且函数名也经过了变换。而对于真实的前端项目，开发者会将数十个源文件压缩为一个文件，这时，错误的列号可能多达数千，且出错的真实文件名也是很难确定的，这样的话，压缩代码的报错信息是很难Debug的。</p>
+<p>而Source Map则可以用于还原真实的出错位置，帮助开发者更快的Debug。</p>
+<p>什么是Source Map?</p>
+<p>使用UglifyJS2时指定source-map选项即可生成Source Map:</p>
+<p>uglifyjs hello.js <br>         -m toplevel=true <br>         -c unused=true,collapse_vars=true <br>         –source-map hello.min.js.map <br>         –source-map-include-sources <br>         –source-map-root <br>         -o hello.min.js</p>
+<p>各种主流前端任务管理工具，打包工具都支持生成Source Map，具体可以查看生成Source Map - Fundebug文档。</p>
+<p>生成的hello.min.js多了sourceMappingURL，表示Source Map文件的位置。</p>
+<p>function o(){var o=”Hello, “+Name;console.log(o)}o();<br>//# sourceMappingURL=hello.min.js.map</p>
+<p>生成的Source Map为hello.min.js.map:</p>
+<p>{<br>    “version”: 3,<br>    “sources”: [“hello.js”],<br>    “names”: [“sayHello”, “greeting”, “Name”, “console”, “log”],<br>    “mappings”: “AAAA,QAASA,KAEL,GACIC,GAAW,UAAYC,IAC3BC,SAAQC,IAAIH,GAGhBD”,<br>    “file”: “hello.min.js”,<br>    “sourceRoot”: “”,<br>    “sourcesContent”: [“function sayHello()\n{\n    var name = &quot;Fundebug&quot;;\n    var greeting = &quot;Hello, &quot; + Name;\n    console.log(greeting);\n}\n\nsayHello();\n”]<br>}</p>
+<p>由hello.min.js.map可知，Source Map是一个JSON文件，而它包含了代码转换前后的位置信息。也就是说，给定一个转换之后的压缩代码的位置，就可以通过Source Map获取转换之前的代码位置，反过来也一样。Source Map各个属性的含义如下:</p>
+<p>version：Source Map的版本号。<br>sources：转换前的文件列表。<br>names：转换前的所有变量名和属性名。<br>mappings：记录位置信息的字符串，经过编码。<br>file：(可选)转换后的文件名。<br>sourceRoot：(可选)转换前的文件所在的目录。如果与转换前的文件在同一目录，该项为空。<br>sourcesContent:(可选)转换前的文件内容列表，与sources列表依次对应。<br>Source Map真正神奇之处在于mappings属性，它记录了位置是如何对应的。JavaScript Source Map 详解已经有很好的解释，这里不再赘述。</p>
+<p>怎样使用Source Map?</p>
+<p>主流浏览器均支持Source Map功能，不过Chrome与Firefox需要一些简单的配置，具体步骤请参考How to enable source maps。下面以MacBook上的Chrome浏览器为例，介绍一下配置方法:</p>
+<ol>
+<li>开启开发者工具<br>使用快捷键option + command + i；或者在菜单栏选择视图-&gt;开发者-&gt;开发者工具</li>
+</ol>
+<ol start="2">
+<li>打开设置<br>使用快捷键fn + F1；或者点击右上角的三个点的图标，选择Settings</li>
+</ol>
+<ol start="3">
+<li>开启Source Map<br>在Sources中，选中Enable JavaScript source maps</li>
+</ol>
+<p>为了测试，我写了一个简单的HTML文件hello.min.html</p>
+<head>
+    <script type="text/javascript" src="hello.min.js"></script>
+</head>
+
+<p>使用Chrome打开hello.min.html，在控制台看到的错误如下:</p>
+<p>Uncaught ReferenceError: Name is not defined<br>    at o (hello.min.js:1)<br>    at hello.min.js:1</p>
+<p>报错的文件仍然为hello.min.js，需要刷新一下Source Map才有作用:</p>
+<p>Uncaught ReferenceError: Name is not defined<br>    at o (hello.js:4)<br>    at hello.js:8</p>
+<p>注意，Chrome的报错信息没有列号，因此4为错误的行号。Chrome不仅可以通过Source Map还原真实的出错位置，还可以根据Source Map的sourcesContent还原出错的源代码。点击出错位置，即可跳转到源码，这样Debug将非常方便。</p>
+<p>参考链接<br>JavaScript Source Map 详解<br>Source Map Revision 3 Proposal<br>How to enable source maps<br>关于Fundebug<br>Fundebug专注于JavaScript、微信小程序、微信小游戏、支付宝小程序、React Native、Node.js和Java实时BUG监控。 自从2016年双十一正式上线，Fundebug累计处理了6亿+错误事件，得到了Google、360、金山软件等众多知名用户的认可。欢迎免费试用！</p>
+<p>版权声明<br>转载时请注明作者Fundebug以及本文地址：</p>
+<p><a href="https://blog.fundebug.com/" target="_blank" rel="noopener">https://blog.fundebug.com/</a> 2017/03/13/sourcemap-tutorial/</p>
+<p>发布于 2018-09-17</p>
 
           
         
@@ -363,13 +525,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="juvenile  //你的名字">
+      <meta itemprop="name" content="juvenile">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="juvenile的四维空间    //你博客的名字">
+      <meta itemprop="name" content="juvenile的四维空间">
     </span>
 
     
@@ -389,9 +551,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-18T12:27:41+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T12:27:41+08:00">
                 2019-10-18
               </time>
             
@@ -514,7 +676,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">juvenile  //你的名字</p>
+              <p class="site-author-name" itemprop="name">juvenile</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -525,8 +687,8 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -570,13 +732,13 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">juvenile  //你的名字</span>
+  <span class="author" itemprop="copyrightHolder">juvenile</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -584,7 +746,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
