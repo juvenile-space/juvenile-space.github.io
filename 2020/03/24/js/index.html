@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="如果 去掉var，则会被定义为全局变量 document.getElementsByTagName(“input”); &#x2F;&#x2F; 获取所有的input标签对象 readonly 不可编辑，但可以选择和复制；值可以传递到后台disabled 不能编辑，不能复制，不能选择；值不可以传递到后台 alert        警告窗口confirm    确认窗口prompt      信息输入窗口 可视区域距离">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;js&#x2F;index.html">
+<meta property="og:site_name" content="juvenile的四维空间">
+<meta property="og:description" content="如果 去掉var，则会被定义为全局变量 document.getElementsByTagName(“input”); &#x2F;&#x2F; 获取所有的input标签对象 readonly 不可编辑，但可以选择和复制；值可以传递到后台disabled 不能编辑，不能复制，不能选择；值不可以传递到后台 alert        警告窗口confirm    确认窗口prompt      信息输入窗口 可视区域距离">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-11T15:49:25.594Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/24/js/"/>
+
+
+
+
+
+  <title>js | juvenile的四维空间</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">juvenile的四维空间</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T13:58:00+08:00">
+                2020-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>如果 去掉var，则会被定义为全局变量</p>
+<p>document.getElementsByTagName(“input”); // 获取所有的input标签对象</p>
+<p>readonly 不可编辑，但可以选择和复制；值可以传递到后台<br>disabled 不能编辑，不能复制，不能选择；值不可以传递到后台</p>
+<p>alert        警告窗口<br>confirm    确认窗口<br>prompt      信息输入窗口</p>
+<p>可视区域距离页面顶部的距离<br>scrollTop=document.documentElement.scrollTop||document.body.scrollTop</p>
+<p>可视区的大小：<br>// 1)innerXXX（不兼容ie）<br>window.innerHeight 可视区高度，包含滚动条宽度<br>window.innerWidth 可视区宽度，包含滚动条宽度<br>// 2)document.documentElement.clientXXX(兼容ie)<br>document.documentElement.clientWidth可视区宽度，不包含滚动条宽度<br>document.documentElement.clientHeight可视区高度，不包含滚动条宽度</p>
+<p>.innerHTML和outerHTML的区别<br>innerHTML(元素内包含的内容）<br>outerHTML(自己以及元素内的内容）</p>
+<p>offsetWidthoffsetHeight和clientWidth clientHeight的区别<br>(1)offsetWidth （content宽度+padding宽度+border宽度）<br>(2)offsetHeight（content高度+padding高度+border高度）<br>(3)clientWidth（content宽度+padding宽度）<br>(4)clientHeight（content高度+padding高度）</p>
+<p>.闭包的好处<br>(1)希望一个变量长期驻扎在内存当中(不被垃圾回收机制回收)<br>(2)避免全局变量的污染<br>(3)私有成员的存在<br>(4)安全性提高</p>
+<p>冒泡排序<br>var array = [5, 4, 3, 2, 1];<br>var temp = 0;<br>for (var i = 0; i &lt;array.length; i++){//次数<br>    for (var j = 0; j &lt;array.length - i; j++){//要比较的值<br>        if (array[j] &gt; array[j + 1]){<br>            temp = array[j + 1];<br>            array[j + 1] = array[j];<br>            array[j] = temp;<br>        }<br>    }<br>}</p>
+<p>split() 和 join() 的区别<br>split()是将字符串切割成数组的形式，join()是将数组转换成字符串。</p>
+<p>push()尾部添加<br>pop()尾部删除<br>unshift()头部添加<br>shift()头部删除</p>
+<p>闭包就是能够读取其他函数内部变量的函数,使得函数不被GC机制回收，如果过多使用闭包，容易导致内存泄露。</p>
+<p>event.target永远是直接接受事件的目标DOM元素；</p>
+<p>nodename<br>指定节点的节点名称。</p>
+<p>addEventListener(“事件名” , “事件处理函数” , “布尔值”) 方法用于向指定元素添加事件句柄。</p>
+<p>DOMContentLoaded顾名思义，就是dom内容加载完毕。</p>
+<p>事件委托的相关代码<br>document.addEventListener(‘DOMContentLoaded’, function() {<br>  let app = document.getElementById(‘todo-app’);<br>  app.addEventListener(‘click’, function(e) {<br>    if (e.target &amp;&amp; e.target.nodeName === ‘LI’) {<br>      let item = e.target;<br>      alert(‘you clicked on item: ‘ + item.innerHTML)<br>    }<br>  })<br>})</p>
+<p>如果在面试中讨论构建应用程序，出现滚动、窗口大小调整或按下键等事件请务必提及 防抖(Debouncing) 和 函数节流（Throttling）来提升页面速度和性能。</p>
+<p>在循环中使用闭包<br>const arr = [10, 12, 15, 21];<br>for (var i = 0; i &lt; arr.length; i++) {<br>  setTimeout(function(i_local){<br>    return function () {<br>      console.log(‘The index of this number is: ‘ + i_local);<br>    }<br>  }(i), 3000)<br>}</p>
+<p>this指向问题<br>1、如果在事件函数中 this是触发事件的对象<br>2、普通的函数     this是window<br>函数是对象上的方法  this是对象<br>定时器的this是window<br>在构造函数里面this指向 函数内部造出来的对象</p>
+<hr>
+<p>break（跳出循环） continue（跳出本次循环）</p>
+<p>数组.map(将对应关系映射到新的数组)()类似于v-for（循环渲染数组）<br>var users = [<br>  {name: “张含韵”, “email”: “<a href="mailto:zhang@email.com" target="_blank" rel="noopener">zhang@email.com</a>“},<br>  {name: “江一燕”,   “email”: “<a href="mailto:jiang@email.com" target="_blank" rel="noopener">jiang@email.com</a>“},<br>  {name: “李小璐”,  “email”: “<a href="mailto:li@email.com" target="_blank" rel="noopener">li@email.com</a>“}<br>];<br>var emails = users.map(function (user) { return user.email; });<br>console.log(emails.join(“, “)); // <a href="mailto:zhang@email.com" target="_blank" rel="noopener">zhang@email.com</a>, <a href="mailto:jiang@email.com" target="_blank" rel="noopener">jiang@email.com</a>, <a href="mailto:li@email.com" target="_blank" rel="noopener">li@email.com</a></p>
+<p>变量与函数的预解析<br>1、声明变量 2、开辟存储空间 3、变量赋值<br>预解析范围： 1、全局就提升到script标签开始的位置 2、函数内就提升到函数开始的位置</p>
+<p>以下的函数a会被当成字符串执行<br>        function a(){<br>           alert(1);<br>        }<br>        alert(a);<br>解析器会将函数声明提升到顶部（函数的<strong>声明</strong>会优先读取，无论函数的执行语句放在声明前面还是后面都会正常执行）注：表达式方法定义函数（函数的<strong>定义</strong>不会优先加载，函数的执行语句必须放在定义的后面，否则会报错。）<br>//声明一个函数<br>function a(){<br>        var i=1；<br>        return i;<br>    }<br>//打印出函数名<br>alert(a);  会把整个函数的代码打印出来</p>
+<p>//打印出函数名（带括号）<br>alert(a()); 会打印出函数返回值，1</p>
+<p>//直接赋值函数名<br>var b = a;  会把整个函数赋值过去</p>
+<p>//赋值函数名（带括号）<br>var b = a(); 赋值的是函数的返回值，1</p>
+<p>//如果这样赋值<br>var b = function a(){<br>        var i=1；<br>        return i;<br>    }<br>同 var b = a 赋值方法类似】</p>
+<pre><code> var a;
+function asda(){
+   alert    (1);
+   console.log(&apos;ok&apos;);
+}
+a=10;
+alert(asda);</code></pre><p><strong>函数声明优先级高于变量声明，变量赋值覆盖函数。并且存在隐式传递</strong>上图之所以前面输出的是函数，后面输出的是赋值数是因为浏览器在解析js文件时初始化先拿到所有的声明，由于函数声明优先级高于变量声明，所以一开始拿到是函数，然后代码再从上往下解析，后面输出变量时由于前面已对该变量进行了赋值，所以输出的是赋值数<br>如果数组中某一项的值是null或者undefined，那么该 值在join()、toLocaleString()、valueOf()方法返回结果中<br>以<strong>空字符串</strong>表示</p>
+<p>我们可以通过Cookie的setDomain()方法来设置cookie的域名。如果我们需要在这个项目中设置一个cookie而另一个项目来获取，可以做此操作。Domain为设置Cookie的有效域，Path限制有效路径。<br>cookie存在作用域和路径问题<br>document.cookie=’name=value;expire=到期 的时间对象;path=/‘;<br>split（’<strong><em>‘,num）（将数组以’</em></strong>‘作为分隔符分割，最大数组为3，只显示3个数组）</p>
+<p>js基本数据类型：布尔  undefined null number string<br>引用类型：Function,Array,Object——技术对象系列，typeof()这个三种类型得到的都是object<br>复合类型： string number</p>
+<p>出现undefined的情况：<br>1.在使用var声明变量但未对其加以初始化时，这个变量的值就是undefined<br>2.函数没有return，有return没有返回值：<br>3.函数没有传参<br>4.访问对象上面不存在的属性</p>
+<p>构造函数 一堆方法和属性的集合<br>new的作用<br>1.创建一个空白对象<br>2.把this指针指向空白对象<br>3.返回对象</p>
+<hr>
+<p>构造函数.prototype（js允许在原型上挂载新的方法，并用于构造函数的所有对象上）</p>
+<p>在进行自定义构造函数创建对象之前，我们首先了解一下构造函数和普通函数有什么区别。<br>其一，实际上并不存在创建构造函数的特殊语法，其与普通函数唯一的区别在于调用方法。对于任意函数，使用new操作符调用，那么它就是构造函数；不使用new操作符调用，那么它就是普通函数。</p>
+<p>其二，按照惯例，我们约定构造函数名以大写字母开头，普通函数以小写字母开头，这样有利于显性区分二者。例如上面的new Array()，new Object()。</p>
+<p>其三，使用new操作符调用构造函数时，会经历(1)创建一个新对象；(2)将构造函数作用域赋给新对象（使this指向该新对象）；(3)执行构造函数代码；<br>(4)返回新对象；4个阶段。我们知道在JS中，函数是对象。</p>
+<hr>
+<p>我们可以用以下方法来检测不同的Student对象并不共用alertName()函数：<br>alert(v1.alertName == v2.alertName);  //flase<br>这无疑是一种内存的浪费。我们知道，this对象是在运行时基于函数的执行环境进行绑定的。在全局函数中，this对象等同于window；在对象方法中，this指向该对象。</p>
+<p>我们创建的每一个函数都有一个prototype属性，该属性是一个指针，该指针指向了一个对象。对于我们创建的构造函数，该对象中包含可以由所有实例共享的属性和方法。<br>我们可以通过在构造函数原型对象中添加属性和方法来实现对象间数据的共享<br>当我们需要读取对象的某个属性时，都会执行一次搜索。首先在该对象中查找该属性，若找到，返回该属性值；否则，到[[prototype]]指向的原型对象中继续查找。<br>由此我们也可以看出另外一层意思：如果对象实例中包含和原型对象中同名的属性或方法，则对象实例中的该同名属性或方法会屏蔽原型对象中的同名属性或方法。原因就是“首先在该对象中查找该属性，若找到，返回该属性值；”<br>Student.prototype （原型指针）= {<br>  constructor : Student,<br>  alertName : function() {<br>                alert(this.name);<br>              }<br>}（注意：student.prototype == student.prototype.alerName）<br><strong>属性写在构造函数中<br>方法写在原型中<br>永远都不会改变的放在原型中<br>方法中公用的属性放在构造函数中</strong><br>HTML事件处理：<br>fuc my(){}<br>onclick=“my（）”<br>dom0级事件处理:<br>在js内部绑定事件<br>onclick=“my（）”<br>（缺点：只能绑定一次，后来要是再绑定，会发现覆盖现象）<br>取消绑定：onclick=“”<br>addEventListener(“事件名” , “事件处理函数” , “布尔值”（false 事件冒泡 true 事件捕获）);（2级事件处理）<br>优点相比前两个就多了。可以选择是事件流。同一个东西可以绑定多个相同的事件。事件名可以组成字符串。<br>5、undefined原因<br>5.1、变量未被赋值<br>5.2、函数没有返回值<br>5.3、函数没有传参<br>5.4、获取对象本身不存在<br>function noNumbers(e)//禁止用户按下数字键<br>{<br>var keynum<br>var keychar<br>var numcheck</p>
+<p>if(window.event) // IE<br>    {<br>    keynum = e.keyCode<br>    }<br>else if(e.which（表示用户按下的键位，并给出索值）) //Netscape/Firefox/Opera<br>    {<br>    keynum = e.which<br>    }<br>keychar = String.fromCharCode(keynum)<strong>静态函数String.fromCharCode()可以把索引值（按键码）转化成该键对应的的字符。</strong><br>numcheck = /\d/<br>return !numcheck.test(keychar)（test() 方法是一个正则表达式方法。<br>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。）<br>}<br>window.event指向当前正在处理事件的值（非规范）<br>onchange事件（当文本框内容发生改变且失去焦点时）<br>onblur 属性与 onfocus 属性相反。<br>在js中获取下一个元素的标签：this.nextelementsibling<br><strong>(this指向问题)</strong><br>trim去掉字符串前后空格，中间的不能去<br>/<strong>**</strong><br>    <body><br>        <div id="div1"><br><span>123456789</span></p>
+</div>
+    </body>
+    <script>
+        alert(document.getElementById("div1").innerText);
+                  （123456789）
+        alert(document.getElementById("div1").innerHTML);
+                  （<span>123456789</span>）
+    </script>
+******/
+将字符串转化为unicode编码：//str.charCodeAt()
+将Unicode编码转化为字符：// String.fromCharCode();
+++a：先赋值，再运算。（=，+） a++：先运算，再赋值。（+，=）
+Math.random() 函数返回一个浮点, 伪随机数在范围[0，1) Math.floor与parseInt都有向下取整的作用，都有向下取整的作 用。但Math.floor()的性能更高，因为功能单一。
+arr.push()//在最后一个数据后面增加数据，此时数组长度已增加 arr.pop()//删除最后一个数据，此时数组长度已减少 arr.unshift()//在第一个数据前面增加数据，此时数组长度已增加 arr.shift()//删除第一个数据，此时数组长度已减少
+sort：如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
+（其中a和b的值为数组里的数组值）
+若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+若 a 等于 b，则返回 0。
+若 a 大于 b，则返回一个大于 0 的值。
+反转排序 arr.reverse()
+11、JS中三种弹窗 1、alert 2、confirm 3、prompt
+prompt(提示框标题,文本框默认内容（相当于placehoder）);
+在JS中，数组是Object类型
+1、var arrName=['a','b','c'];//更推荐使用这种方法
+ 2、var arrName=new Array('a','b','c');//不推荐（只有一个数据时，此数据为数组的长度，而非数组值；多个数据时，两者显示结果一样）
+定义对象型数组及获取方法
+var person =  [firstName: "Bill", lastName :"Gates", age:62];document . getElementById("demo"). innerHTML =person["firstName"] ;</script>
+JS的5种基本数据类型特点：基本数据类型是指存放在栈中的简单数据段，数据大小确 定，内存空间大小可以分配，它们是直接按值存放的，所以可以直接按 值访问。
+1、number:包括了浮点数和整数 2、string：字符串 3、boolean: true/false 4、undefined:如果使用一个未定义的变量，或者是没有初始值的 变量，都会得到undefind，其实null的一个派生，因此，undefined和 null是相等的，但他们的含义不同 （==返回true，===返回false）5、null
+JS中的引用类型 特点：Object（在JS中除了基本数据类型以外的都是对象，数据是 对象，函数是对象，正则表达式是对象）。
+引用类型是存放在堆内存中的对象，变量其实是保存的在栈内存中 的一个指针（保存的是堆内存中的引用地址），这个指针指向堆内存
+（堆内存中的对象：object
+   栈内存指针：变量  —>堆内存
+）
+定时器： 分别是window.setTimeout()和window.setInterval。其中前者可以使 一段代码在指定时间后运行，并且函数只执行一次；而后者则可以使一 段代码每过指定时间就运行一次。
+清除定时器： clearTimeout(); clearInterval();
+数组的splice用法： splice(x ,y,'z'); 表示的是：从下标为x的前面那个位置开始，删除y个值，并添加z
+数组的concat()方法 arr1.concat(arr2,arr3); 注意：将arr2和arr3拼接到arr1后面
+arguments（类数组） 类（伪）数组：有下标，有长度，但是没有数组的方法。（当函数实参个数不确定时，使用arguments）
+ex：
+<script>
+// 当函数的实参个数不确定时，用arguments
+function sum() {
+var n=0;
+for(var i=0;i<arguments. length;i++) {
+n+= arguments[i];◆__ arguments是- “个类数组， 有长度，有下
+标，但是没有数组的方法。在函数的实参个数不确定的时候使用arguments
+}
+return n;
+}
+console. log (sum(5, 9)); //14
+console. log(sum(7,8, 9,5));//29
+</script>
+什么时候必须用分号： 1、赋值的时候必须加； 2、函数调用后面必须加；
+6种假：1、0  2、false  3、null  4、undefined  5、""  6、NaN
+数字＋字符串=字符串
+getElementsByTagName() 方法可返回带有指定标签名的对象的集合
+返回小于等于x的最大整数:
+Math.floor(1.6);
+以上实例将输出：
+1
+括号包裹定义函数体，解析器将会以函数表达式的方式去调用定义 函数。也就是说，任何能将函数变成一个函数表达式的作法，都可以使 解析器正确的调用定义函数。而 ! 就是其中一个，而 + - || 都有这样的 功能。
+因为在匿名函数调用的时候，通常我们都是用： (function(){})() 的形 式，但也可以使用另一种形式：!function(){}()
+
+<p>1、indexOf() 方法可返回某个指定的字符串值在字符串中 首次出现的位置。 2、lastIndexOf() 方法可返回一个指定的字符串值最后出 现的位置，在一个字符串中的指定位置从后向前搜索。 3、都有两个值。在indexOf()中，第二个值是从这个值开始 查找。在lastIndexOf()中，第二个值是到这个值结束。<br>4、在比较第一个参数与数组中的每一项时，会使用全等操 作符；也就是说，要求查找的项必须严格相等。</p>
+<p>eval() eval(a+b); //会把字符串当做js代码来执行，但是不建议使 用。以防eval注入攻击。比如用户输入<script>，就会出现问题</p>
+<p> NaN not a number 不是一个数字 1、不是数字但是数字类型 2、NaN与任何值都不相等。包括本身 3、任何涉及NaN的操作都会返回NaN。比如 NaN/10 会 返回NaN 4、isNaN。isNaN()可以接受一个参数，这个参 数可以是任何数据类型。当它接收到这个值后，会试图将这个值转化为 数值。<br>isNaN() 函数用于检查其参数是否是非数字值。<br>html标签中有自定义属性，这个自定义属性的格式必须是 data-xxx。在js中可以用obj.dataset.xxx来获取。</p>
+<p>nextElementSibling 属性返回指定元素之后的下一个兄弟元素（相同节点树层中的下一个元素节点）。<br>nextSibling 属性与 nextElementSibling 属性的差别：<br>nextSibling 属性返回元素节点之后的兄弟节点（包括文本节点、注释节点）；<br>nextElementSibling 属性只返回元素节点之后的兄弟元素节点（不包括文本节点、注释节点）；<br>nextElementSibling属性为只读属性。</p>
+<p>构造函数是定义在global对象中的，在浏览器中这个全局对象就 是window</p>
+<p>ECMAScript [ek-ma-script] ECMA：欧洲计算机制造商协会 该协会指定TC39(39号技术委员会)制定一些标准，然后完成了 ECMA-262------定义一种名为JavaScript的新脚本语言的标准</p>
+<p>IE中的所有DOM对象都是以COM对象形式实现的。这意味着IE中 的DOM对象与原生JavaScript对象的行为或活动特点并不一致。</p>
+<p>console.time() 方法是作为计算器的起始方法。<br>该方法一般用于测试程序执行的时长。<br>console.timeEnd() 方法为计算器的结束方法，并将执行时长显示在控制台。<br>如果一个页面有多个地方需要使用到计算器，可以添加标签参数来设置。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/13/JavaScript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/" rel="next" title="JavaScript构造函数及原型对象">
+                <i class="fa fa-chevron-left"></i> JavaScript构造函数及原型对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">juvenile</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">juvenile</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

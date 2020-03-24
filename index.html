@@ -228,6 +228,1264 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/24/js/" itemprop="url">js</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T13:58:00+08:00">
+                2020-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如果 去掉var，则会被定义为全局变量</p>
+<p>document.getElementsByTagName(“input”); // 获取所有的input标签对象</p>
+<p>readonly 不可编辑，但可以选择和复制；值可以传递到后台<br>disabled 不能编辑，不能复制，不能选择；值不可以传递到后台</p>
+<p>alert        警告窗口<br>confirm    确认窗口<br>prompt      信息输入窗口</p>
+<p>可视区域距离页面顶部的距离<br>scrollTop=document.documentElement.scrollTop||document.body.scrollTop</p>
+<p>可视区的大小：<br>// 1)innerXXX（不兼容ie）<br>window.innerHeight 可视区高度，包含滚动条宽度<br>window.innerWidth 可视区宽度，包含滚动条宽度<br>// 2)document.documentElement.clientXXX(兼容ie)<br>document.documentElement.clientWidth可视区宽度，不包含滚动条宽度<br>document.documentElement.clientHeight可视区高度，不包含滚动条宽度</p>
+<p>.innerHTML和outerHTML的区别<br>innerHTML(元素内包含的内容）<br>outerHTML(自己以及元素内的内容）</p>
+<p>offsetWidthoffsetHeight和clientWidth clientHeight的区别<br>(1)offsetWidth （content宽度+padding宽度+border宽度）<br>(2)offsetHeight（content高度+padding高度+border高度）<br>(3)clientWidth（content宽度+padding宽度）<br>(4)clientHeight（content高度+padding高度）</p>
+<p>.闭包的好处<br>(1)希望一个变量长期驻扎在内存当中(不被垃圾回收机制回收)<br>(2)避免全局变量的污染<br>(3)私有成员的存在<br>(4)安全性提高</p>
+<p>冒泡排序<br>var array = [5, 4, 3, 2, 1];<br>var temp = 0;<br>for (var i = 0; i &lt;array.length; i++){//次数<br>    for (var j = 0; j &lt;array.length - i; j++){//要比较的值<br>        if (array[j] &gt; array[j + 1]){<br>            temp = array[j + 1];<br>            array[j + 1] = array[j];<br>            array[j] = temp;<br>        }<br>    }<br>}</p>
+<p>split() 和 join() 的区别<br>split()是将字符串切割成数组的形式，join()是将数组转换成字符串。</p>
+<p>push()尾部添加<br>pop()尾部删除<br>unshift()头部添加<br>shift()头部删除</p>
+<p>闭包就是能够读取其他函数内部变量的函数,使得函数不被GC机制回收，如果过多使用闭包，容易导致内存泄露。</p>
+<p>event.target永远是直接接受事件的目标DOM元素；</p>
+<p>nodename<br>指定节点的节点名称。</p>
+<p>addEventListener(“事件名” , “事件处理函数” , “布尔值”) 方法用于向指定元素添加事件句柄。</p>
+<p>DOMContentLoaded顾名思义，就是dom内容加载完毕。</p>
+<p>事件委托的相关代码<br>document.addEventListener(‘DOMContentLoaded’, function() {<br>  let app = document.getElementById(‘todo-app’);<br>  app.addEventListener(‘click’, function(e) {<br>    if (e.target &amp;&amp; e.target.nodeName === ‘LI’) {<br>      let item = e.target;<br>      alert(‘you clicked on item: ‘ + item.innerHTML)<br>    }<br>  })<br>})</p>
+<p>如果在面试中讨论构建应用程序，出现滚动、窗口大小调整或按下键等事件请务必提及 防抖(Debouncing) 和 函数节流（Throttling）来提升页面速度和性能。</p>
+<p>在循环中使用闭包<br>const arr = [10, 12, 15, 21];<br>for (var i = 0; i &lt; arr.length; i++) {<br>  setTimeout(function(i_local){<br>    return function () {<br>      console.log(‘The index of this number is: ‘ + i_local);<br>    }<br>  }(i), 3000)<br>}</p>
+<p>this指向问题<br>1、如果在事件函数中 this是触发事件的对象<br>2、普通的函数     this是window<br>函数是对象上的方法  this是对象<br>定时器的this是window<br>在构造函数里面this指向 函数内部造出来的对象</p>
+<hr>
+<p>break（跳出循环） continue（跳出本次循环）</p>
+<p>数组.map(将对应关系映射到新的数组)()类似于v-for（循环渲染数组）<br>var users = [<br>  {name: “张含韵”, “email”: “<a href="mailto:zhang@email.com" target="_blank" rel="noopener">zhang@email.com</a>“},<br>  {name: “江一燕”,   “email”: “<a href="mailto:jiang@email.com" target="_blank" rel="noopener">jiang@email.com</a>“},<br>  {name: “李小璐”,  “email”: “<a href="mailto:li@email.com" target="_blank" rel="noopener">li@email.com</a>“}<br>];<br>var emails = users.map(function (user) { return user.email; });<br>console.log(emails.join(“, “)); // <a href="mailto:zhang@email.com" target="_blank" rel="noopener">zhang@email.com</a>, <a href="mailto:jiang@email.com" target="_blank" rel="noopener">jiang@email.com</a>, <a href="mailto:li@email.com" target="_blank" rel="noopener">li@email.com</a></p>
+<p>变量与函数的预解析<br>1、声明变量 2、开辟存储空间 3、变量赋值<br>预解析范围： 1、全局就提升到script标签开始的位置 2、函数内就提升到函数开始的位置</p>
+<p>以下的函数a会被当成字符串执行<br>        function a(){<br>           alert(1);<br>        }<br>        alert(a);<br>解析器会将函数声明提升到顶部（函数的<strong>声明</strong>会优先读取，无论函数的执行语句放在声明前面还是后面都会正常执行）注：表达式方法定义函数（函数的<strong>定义</strong>不会优先加载，函数的执行语句必须放在定义的后面，否则会报错。）<br>//声明一个函数<br>function a(){<br>        var i=1；<br>        return i;<br>    }<br>//打印出函数名<br>alert(a);  会把整个函数的代码打印出来</p>
+<p>//打印出函数名（带括号）<br>alert(a()); 会打印出函数返回值，1</p>
+<p>//直接赋值函数名<br>var b = a;  会把整个函数赋值过去</p>
+<p>//赋值函数名（带括号）<br>var b = a(); 赋值的是函数的返回值，1</p>
+<p>//如果这样赋值<br>var b = function a(){<br>        var i=1；<br>        return i;<br>    }<br>同 var b = a 赋值方法类似】</p>
+<pre><code> var a;
+function asda(){
+   alert    (1);
+   console.log(&apos;ok&apos;);
+}
+a=10;
+alert(asda);</code></pre><p><strong>函数声明优先级高于变量声明，变量赋值覆盖函数。并且存在隐式传递</strong>上图之所以前面输出的是函数，后面输出的是赋值数是因为浏览器在解析js文件时初始化先拿到所有的声明，由于函数声明优先级高于变量声明，所以一开始拿到是函数，然后代码再从上往下解析，后面输出变量时由于前面已对该变量进行了赋值，所以输出的是赋值数<br>如果数组中某一项的值是null或者undefined，那么该 值在join()、toLocaleString()、valueOf()方法返回结果中<br>以<strong>空字符串</strong>表示</p>
+<p>我们可以通过Cookie的setDomain()方法来设置cookie的域名。如果我们需要在这个项目中设置一个cookie而另一个项目来获取，可以做此操作。Domain为设置Cookie的有效域，Path限制有效路径。<br>cookie存在作用域和路径问题<br>document.cookie=’name=value;expire=到期 的时间对象;path=/‘;<br>split（’<strong><em>‘,num）（将数组以’</em></strong>‘作为分隔符分割，最大数组为3，只显示3个数组）</p>
+<p>js基本数据类型：布尔  undefined null number string<br>引用类型：Function,Array,Object——技术对象系列，typeof()这个三种类型得到的都是object<br>复合类型： string number</p>
+<p>出现undefined的情况：<br>1.在使用var声明变量但未对其加以初始化时，这个变量的值就是undefined<br>2.函数没有return，有return没有返回值：<br>3.函数没有传参<br>4.访问对象上面不存在的属性</p>
+<p>构造函数 一堆方法和属性的集合<br>new的作用<br>1.创建一个空白对象<br>2.把this指针指向空白对象<br>3.返回对象</p>
+<hr>
+<p>构造函数.prototype（js允许在原型上挂载新的方法，并用于构造函数的所有对象上）</p>
+<p>在进行自定义构造函数创建对象之前，我们首先了解一下构造函数和普通函数有什么区别。<br>其一，实际上并不存在创建构造函数的特殊语法，其与普通函数唯一的区别在于调用方法。对于任意函数，使用new操作符调用，那么它就是构造函数；不使用new操作符调用，那么它就是普通函数。</p>
+<p>其二，按照惯例，我们约定构造函数名以大写字母开头，普通函数以小写字母开头，这样有利于显性区分二者。例如上面的new Array()，new Object()。</p>
+<p>其三，使用new操作符调用构造函数时，会经历(1)创建一个新对象；(2)将构造函数作用域赋给新对象（使this指向该新对象）；(3)执行构造函数代码；<br>(4)返回新对象；4个阶段。我们知道在JS中，函数是对象。</p>
+<hr>
+<p>我们可以用以下方法来检测不同的Student对象并不共用alertName()函数：<br>alert(v1.alertName == v2.alertName);  //flase<br>这无疑是一种内存的浪费。我们知道，this对象是在运行时基于函数的执行环境进行绑定的。在全局函数中，this对象等同于window；在对象方法中，this指向该对象。</p>
+<p>我们创建的每一个函数都有一个prototype属性，该属性是一个指针，该指针指向了一个对象。对于我们创建的构造函数，该对象中包含可以由所有实例共享的属性和方法。<br>我们可以通过在构造函数原型对象中添加属性和方法来实现对象间数据的共享<br>当我们需要读取对象的某个属性时，都会执行一次搜索。首先在该对象中查找该属性，若找到，返回该属性值；否则，到[[prototype]]指向的原型对象中继续查找。<br>由此我们也可以看出另外一层意思：如果对象实例中包含和原型对象中同名的属性或方法，则对象实例中的该同名属性或方法会屏蔽原型对象中的同名属性或方法。原因就是“首先在该对象中查找该属性，若找到，返回该属性值；”<br>Student.prototype （原型指针）= {<br>  constructor : Student,<br>  alertName : function() {<br>                alert(this.name);<br>              }<br>}（注意：student.prototype == student.prototype.alerName）<br><strong>属性写在构造函数中<br>方法写在原型中<br>永远都不会改变的放在原型中<br>方法中公用的属性放在构造函数中</strong><br>HTML事件处理：<br>fuc my(){}<br>onclick=“my（）”<br>dom0级事件处理:<br>在js内部绑定事件<br>onclick=“my（）”<br>（缺点：只能绑定一次，后来要是再绑定，会发现覆盖现象）<br>取消绑定：onclick=“”<br>addEventListener(“事件名” , “事件处理函数” , “布尔值”（false 事件冒泡 true 事件捕获）);（2级事件处理）<br>优点相比前两个就多了。可以选择是事件流。同一个东西可以绑定多个相同的事件。事件名可以组成字符串。<br>5、undefined原因<br>5.1、变量未被赋值<br>5.2、函数没有返回值<br>5.3、函数没有传参<br>5.4、获取对象本身不存在<br>function noNumbers(e)//禁止用户按下数字键<br>{<br>var keynum<br>var keychar<br>var numcheck</p>
+<p>if(window.event) // IE<br>    {<br>    keynum = e.keyCode<br>    }<br>else if(e.which（表示用户按下的键位，并给出索值）) //Netscape/Firefox/Opera<br>    {<br>    keynum = e.which<br>    }<br>keychar = String.fromCharCode(keynum)<strong>静态函数String.fromCharCode()可以把索引值（按键码）转化成该键对应的的字符。</strong><br>numcheck = /\d/<br>return !numcheck.test(keychar)（test() 方法是一个正则表达式方法。<br>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。）<br>}<br>window.event指向当前正在处理事件的值（非规范）<br>onchange事件（当文本框内容发生改变且失去焦点时）<br>onblur 属性与 onfocus 属性相反。<br>在js中获取下一个元素的标签：this.nextelementsibling<br><strong>(this指向问题)</strong><br>trim去掉字符串前后空格，中间的不能去<br>/<strong>**</strong><br>    <body><br>        <div id="div1"><br><span>123456789</span></p>
+</div>
+    </body>
+    <script>
+        alert(document.getElementById("div1").innerText);
+                  （123456789）
+        alert(document.getElementById("div1").innerHTML);
+                  （<span>123456789</span>）
+    </script>
+******/
+将字符串转化为unicode编码：//str.charCodeAt()
+将Unicode编码转化为字符：// String.fromCharCode();
+++a：先赋值，再运算。（=，+） a++：先运算，再赋值。（+，=）
+Math.random() 函数返回一个浮点, 伪随机数在范围[0，1) Math.floor与parseInt都有向下取整的作用，都有向下取整的作 用。但Math.floor()的性能更高，因为功能单一。
+arr.push()//在最后一个数据后面增加数据，此时数组长度已增加 arr.pop()//删除最后一个数据，此时数组长度已减少 arr.unshift()//在第一个数据前面增加数据，此时数组长度已增加 arr.shift()//删除第一个数据，此时数组长度已减少
+sort：如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
+（其中a和b的值为数组里的数组值）
+若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+若 a 等于 b，则返回 0。
+若 a 大于 b，则返回一个大于 0 的值。
+反转排序 arr.reverse()
+11、JS中三种弹窗 1、alert 2、confirm 3、prompt
+prompt(提示框标题,文本框默认内容（相当于placehoder）);
+在JS中，数组是Object类型
+1、var arrName=['a','b','c'];//更推荐使用这种方法
+ 2、var arrName=new Array('a','b','c');//不推荐（只有一个数据时，此数据为数组的长度，而非数组值；多个数据时，两者显示结果一样）
+定义对象型数组及获取方法
+var person =  [firstName: "Bill", lastName :"Gates", age:62];document . getElementById("demo"). innerHTML =person["firstName"] ;</script>
+JS的5种基本数据类型特点：基本数据类型是指存放在栈中的简单数据段，数据大小确 定，内存空间大小可以分配，它们是直接按值存放的，所以可以直接按 值访问。
+1、number:包括了浮点数和整数 2、string：字符串 3、boolean: true/false 4、undefined:如果使用一个未定义的变量，或者是没有初始值的 变量，都会得到undefind，其实null的一个派生，因此，undefined和 null是相等的，但他们的含义不同 （==返回true，===返回false）5、null
+JS中的引用类型 特点：Object（在JS中除了基本数据类型以外的都是对象，数据是 对象，函数是对象，正则表达式是对象）。
+引用类型是存放在堆内存中的对象，变量其实是保存的在栈内存中 的一个指针（保存的是堆内存中的引用地址），这个指针指向堆内存
+（堆内存中的对象：object
+   栈内存指针：变量  —>堆内存
+）
+定时器： 分别是window.setTimeout()和window.setInterval。其中前者可以使 一段代码在指定时间后运行，并且函数只执行一次；而后者则可以使一 段代码每过指定时间就运行一次。
+清除定时器： clearTimeout(); clearInterval();
+数组的splice用法： splice(x ,y,'z'); 表示的是：从下标为x的前面那个位置开始，删除y个值，并添加z
+数组的concat()方法 arr1.concat(arr2,arr3); 注意：将arr2和arr3拼接到arr1后面
+arguments（类数组） 类（伪）数组：有下标，有长度，但是没有数组的方法。（当函数实参个数不确定时，使用arguments）
+ex：
+<script>
+// 当函数的实参个数不确定时，用arguments
+function sum() {
+var n=0;
+for(var i=0;i<arguments. length;i++) {
+n+= arguments[i];◆__ arguments是- “个类数组， 有长度，有下
+标，但是没有数组的方法。在函数的实参个数不确定的时候使用arguments
+}
+return n;
+}
+console. log (sum(5, 9)); //14
+console. log(sum(7,8, 9,5));//29
+</script>
+什么时候必须用分号： 1、赋值的时候必须加； 2、函数调用后面必须加；
+6种假：1、0  2、false  3、null  4、undefined  5、""  6、NaN
+数字＋字符串=字符串
+getElementsByTagName() 方法可返回带有指定标签名的对象的集合
+返回小于等于x的最大整数:
+Math.floor(1.6);
+以上实例将输出：
+1
+括号包裹定义函数体，解析器将会以函数表达式的方式去调用定义 函数。也就是说，任何能将函数变成一个函数表达式的作法，都可以使 解析器正确的调用定义函数。而 ! 就是其中一个，而 + - || 都有这样的 功能。
+因为在匿名函数调用的时候，通常我们都是用： (function(){})() 的形 式，但也可以使用另一种形式：!function(){}()
+
+<p>1、indexOf() 方法可返回某个指定的字符串值在字符串中 首次出现的位置。 2、lastIndexOf() 方法可返回一个指定的字符串值最后出 现的位置，在一个字符串中的指定位置从后向前搜索。 3、都有两个值。在indexOf()中，第二个值是从这个值开始 查找。在lastIndexOf()中，第二个值是到这个值结束。<br>4、在比较第一个参数与数组中的每一项时，会使用全等操 作符；也就是说，要求查找的项必须严格相等。</p>
+<p>eval() eval(a+b); //会把字符串当做js代码来执行，但是不建议使 用。以防eval注入攻击。比如用户输入<script>，就会出现问题</p>
+<p> NaN not a number 不是一个数字 1、不是数字但是数字类型 2、NaN与任何值都不相等。包括本身 3、任何涉及NaN的操作都会返回NaN。比如 NaN/10 会 返回NaN 4、isNaN。isNaN()可以接受一个参数，这个参 数可以是任何数据类型。当它接收到这个值后，会试图将这个值转化为 数值。<br>isNaN() 函数用于检查其参数是否是非数字值。<br>html标签中有自定义属性，这个自定义属性的格式必须是 data-xxx。在js中可以用obj.dataset.xxx来获取。</p>
+<p>nextElementSibling 属性返回指定元素之后的下一个兄弟元素（相同节点树层中的下一个元素节点）。<br>nextSibling 属性与 nextElementSibling 属性的差别：<br>nextSibling 属性返回元素节点之后的兄弟节点（包括文本节点、注释节点）；<br>nextElementSibling 属性只返回元素节点之后的兄弟元素节点（不包括文本节点、注释节点）；<br>nextElementSibling属性为只读属性。</p>
+<p>构造函数是定义在global对象中的，在浏览器中这个全局对象就 是window</p>
+<p>ECMAScript [ek-ma-script] ECMA：欧洲计算机制造商协会 该协会指定TC39(39号技术委员会)制定一些标准，然后完成了 ECMA-262------定义一种名为JavaScript的新脚本语言的标准</p>
+<p>IE中的所有DOM对象都是以COM对象形式实现的。这意味着IE中 的DOM对象与原生JavaScript对象的行为或活动特点并不一致。</p>
+<p>console.time() 方法是作为计算器的起始方法。<br>该方法一般用于测试程序执行的时长。<br>console.timeEnd() 方法为计算器的结束方法，并将执行时长显示在控制台。<br>如果一个页面有多个地方需要使用到计算器，可以添加标签参数来设置。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/JavaScript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/13/JavaScript%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%8F%8A%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/" itemprop="url">JavaScript构造函数及原型对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-13T01:52:05+08:00">
+                2019-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JavaScript构造函数及原型对象<br>原创Easy-Sir 发布于2016-04-07 10:00:41 阅读数 20957  收藏<br>展开<br>JavaScript中没有类的概念，所以其在对象创建方面与面向对象语言有所不同。</p>
+<p>JS中对象可以定义为”无序属性的集合”。其属性可以包含基本值，对象以及函数。对象实质上就是一组没有特定顺序的值，对象中每个属性、方法都有一个名字，每个名字都映射到了一个值，因此我们可以将对象想象称为一个散列表。<br>JS是一种基于对象的语言，对象的概念在JS体系中十分的重要，因此有必要清楚地了解一下JS中对象创建的常用方法及各自的局限性。</p>
+<p>使用Object或对象字面量创建对象<br>工厂模式创建对象<br>构造函数模式创建对象<br>原型模式创建对象<br>构造与原型混合模式创建对象<br>使用Object或对象字面量创建对象<br>在说工厂模式创建对象之前，我们不妨回顾一下JS中最基本的创建对象的方法，比如说我想创建一个student对象怎么办？最简单地，new一个Object：</p>
+<p>var student = new Object();<br>student.name = “easy”;<br>student.age = “20”;</p>
+<p>这样，一个student对象就创建完毕，拥有2个属性name以及age，分别赋值为”easy”和20。</p>
+<p>如果你嫌这种方法有一种封装性不良的感觉，我们也可以使用对象字面量的方式来创建student对象：</p>
+<p>var sutdent = {<br>  name : “easy”,<br>  age : 20<br>};</p>
+<p>这样看起来似乎就完美了。但是马上我们就会发现一个十分尖锐的问题：当我们要创建同类的student1，student2，…，studentn时，我们不得不将以上的代码重复n次。</p>
+<p>var sutdent1 = {<br>  name : “easy1”,<br>  age : 20<br>};</p>
+<p>var sutdent2 = {<br>  name : “easy2”,<br>  age : 20<br>};</p>
+<p>…</p>
+<p>var sutdentn = {<br>  name : “easyn”,<br>  age : 20<br>};</p>
+<p>能不能像工厂车间那样，有一个车床就不断生产出对象呢？我们看”工厂模式”。</p>
+<p>工厂模式创建对象<br>JS中没有类的概念，那么我们不妨就使用一种函数将以上对象创建过程封装起来以便于重复调用，同时可以给出特定接口来初始化对象：</p>
+<p>function createStudent(name, age) {<br>  var obj = new Object();<br>  obj.name = name;<br>  obj.age = age;<br>  return obj;<br>}</p>
+<p>var student1 = createStudent(“easy1”, 20);<br>var student2 = createStudent(“easy2”, 20);<br>…<br>var studentn = createStudent(“easyn”, 20);</p>
+<p>这样一来我们就可以通过createStudent函数源源不断地”生产”对象了。看起来已经高枕无忧了，但贪婪的人类总有不满足于现状的天性：我们不仅希望”产品”的生产可以像工厂车间一般源源不断，我们还想知道生产的产品究竟是哪一种类型的。</p>
+<p>比如说，我们同时又定义了”生产”水果对象的createFruit()函数：</p>
+<p>function createFruit(name, color) {<br>  var obj = new Object();<br>  obj.name = name;<br>  obj.color = color;<br>  return obj;<br>}</p>
+<p>var v1 = createStudent(“easy1”, 20);<br>var v2 = createFruit(“apple”, “green”);</p>
+<p>对于以上代码创建的对象v1、v2，我们用instanceof操作符去检测，他们统统都是Object类型。我们的当然不满足于此，我们希望v1是Student类型的，而v2是Fruit类型的。为了实现这个目标，我们可以用自定义构造函数的方法来创建对象。</p>
+<p>构造函数模式创建对象<br>在上面创建Object这样的原生对象的时候，我们就使用过其构造函数：</p>
+<p>var obj = new Object();</p>
+<p>在创建原生数组Array类型对象时也使用过其构造函数：</p>
+<p>var arr = new Array(10);  //构造一个初始长度为10的数组对象</p>
+<p>在进行自定义构造函数创建对象之前，我们首先了解一下构造函数和普通函数有什么区别。</p>
+<p>其一，实际上并不存在创建构造函数的特殊语法，其与普通函数唯一的区别在于调用方法。对于任意函数，使用new操作符调用，那么它就是构造函数；不使用new操作符调用，那么它就是普通函数。</p>
+<p>其二，按照惯例，我们约定构造函数名以大写字母开头，普通函数以小写字母开头，这样有利于显性区分二者。例如上面的new Array()，new Object()。</p>
+<p>其三，使用new操作符调用构造函数时，会经历(1)创建一个新对象；(2)将构造函数作用域赋给新对象（使this指向该新对象）；(3)执行构造函数代码；(4)返回新对象；4个阶段。</p>
+<p>了解了构造函数和普通函数的区别之后，我们使用构造函数将工厂模式的函数重写，并添加一个方法属性：</p>
+<p>function Student(name, age) {<br>  this.name = name;<br>  this.age = age;<br>  this.alertName = function(){<br>    alert(this.name)<br>  };<br>}</p>
+<p>function Fruit(name, color) {<br>  this.name = name;<br>  this.color = color;<br>  this.alertName = function(){<br>    alert(this.name)<br>  };<br>}</p>
+<p>这样我们再分别创建Student和Fruit的对象：</p>
+<p>var v1 = new Student(“easy”, 20);<br>var v2 = new Fruit(“apple”, “green”);</p>
+<p>这时我们再来用instanceof操作符来检测以上对象类型就可以区分出Student以及Fruit了：</p>
+<p>alert(v1 instanceof Student);  //true<br>alert(v2 instanceof Student);  //false<br>alert(v1 instanceof Fruit);  //false<br>alert(v2 instanceof Fruit);  //true</p>
+<p>alert(v1 instanceof Object);  //true 任何对象均继承自Object<br>alert(v2 instanceof Object);  //true 任何对象均继承自Object</p>
+<p>这样我们就解决了工厂模式无法区分对象类型的尴尬。那么使用构造方法来创建对象是否已经完美了呢？</p>
+<p>我们知道在JS中，函数是对象。那么，当我们实例化不止一个Student对象的时候：</p>
+<p>var v1 = new Student(“easy1”, 20);<br>var v2 = new Student(“easy2”, 20);<br>…<br>var vn = new Student(“easyn”, 20);</p>
+<p>其中共同的alertName()函数也被实例化了n次，我们可以用以下方法来检测不同的Student对象并不共用alertName()函数：</p>
+<p>alert(v1.alertName == v2.alertName);  //flase<br>1<br>这无疑是一种内存的浪费。我们知道，this对象是在运行时基于函数的执行环境进行绑定的。在全局函数中，this对象等同于window；在对象方法中，this指向该对象。在上面的构造函数中：</p>
+<p>this.alertName = function(){<br>    alert(this.name)<br>  };</p>
+<p>我们在创建对象（执行alertName函数之前）时，就将alertName()函数绑定在了该对象上。我们完全可以在执行该函数的时候再这样做，办法是将对象方法移到构造函数外部：</p>
+<p>function Student(name, age) {<br>  this.name = name;<br>  this.age = age;<br>  this.alertName = alertName;<br>}</p>
+<p>function alertName() {<br>  alert(this.name);<br>}</p>
+<p>var stu1 = new Student(“easy1”, 20);<br>var stu2 = new Student(“easy2”, 20);</p>
+<p>在调用stu1.alert()时，this对象才被绑定到stu1上。</p>
+<p>我们通过将alertName()函数定义为全局函数，这样对象中的alertName属性则被设置为指向该全局函数的指针。由此stu1和stu2共享了该全局函数，解决了内存浪费的问题。</p>
+<p>但是，通过全局函数的方式解决对象内部共享的问题，终究不像一个好的解决方法。如果这样定义的全局函数多了，我们想要将自定义对象封装的初衷便几乎无法实现了。更好的方案是通过原型对象模式来解决。</p>
+<p>原型模式创建对象<br>函数的原型对象<br>对象实例和原型对象的关联<br>使用原型模型创建对象<br>原型模型创建对象的局限性<br>函数的原型对象<br>在了解如何使用原型模式创建对象之前，有必要先搞清楚什么是原型对象。</p>
+<p>我们创建的每一个函数都有一个prototype属性，该属性是一个指针，该指针指向了一个对象。对于我们创建的构造函数，该对象中包含可以由所有实例共享的属性和方法。如下如所示：</p>
+<p>原型对象</p>
+<p>在默认情况下，所有原型对象会自动包含一个constructor属性，该属性也是一个指针，指向prototype所在的函数：</p>
+<p>原型对象-constructor</p>
+<p>对象实例和原型对象的关联<br>在调用构造函数创建新的实例时，该实例的内部会自动包含一个[[Prototype]]指针属性，该指针指便指向构造函数的原型对象。注意，这个指针关联的是实例与构造函数的原型对象而不是实例与构造函数：</p>
+<p>实例与原型对象</p>
+<p>使用原型模型创建对象<br>直接在原型对象中添加属性和方法<br>了解了原型对象之后，我们便可以通过在构造函数原型对象中添加属性和方法来实现对象间数据的共享了。例如：</p>
+<p>function Student() {<br>}</p>
+<p>Student.prototype.name = “easy”;<br>Student.prototype.age = 20;<br>Student.prototype.alertName = function(){<br>                                alert(this.name);<br>                              };</p>
+<p>var stu1 = new Student();<br>var stu2 = new Student();</p>
+<p>stu1.alertName();  //easy<br>stu2.alertName();  //easy</p>
+<p>alert(stu1.alertName == stu2.alertName);  //true 二者共享同一函数</p>
+<p>以上代码，我们在Student的protptype对象中添加了name、age属性以及alertName()方法。但创建的stu1和stu2中并不包含name、age属性以及alertName()方法，而只包含一个[[prototype]]指针属性。当我们调用stu1.name或stu1.alertName()时，是如何找到对应的属性和方法的呢？</p>
+<p>当我们需要读取对象的某个属性时，都会执行一次搜索。首先在该对象中查找该属性，若找到，返回该属性值；否则，到[[prototype]]指向的原型对象中继续查找。</p>
+<p>由此我们也可以看出另外一层意思：如果对象实例中包含和原型对象中同名的属性或方法，则对象实例中的该同名属性或方法会屏蔽原型对象中的同名属性或方法。原因就是“首先在该对象中查找该属性，若找到，返回该属性值；”</p>
+<p>拥有同名实例属性或方法的示意图：</p>
+<p>上图中，我们在访问stu1.name是会得到”EasySir”：</p>
+<p>alert(stu1.name);  //EasySir<br>通过对象字面量重写原型对象<br>很多时候，我们为了书写的方便以及直观上的”封装性”，我们往往采用对象字面量直接重写整个原型对象：</p>
+<p>function Student() {<br>}</p>
+<p>Student.prototype = {<br>  constructor : Student,<br>  name : “easy”,<br>  age : 20,<br>  alertName : function() {<br>    alert(this.name);<br>  }<br>}；</p>
+<p>要特别注意，我们这里相当于用对象字面量重新创建了一个Object对象，然后使Student的prototype指针指向该对象。该对象在创建的过程中，自动获得了新的constructor属性，该属性指向Object的构造函数。因此，我们在以上代码中，增加了constructor : Student使其重新指回Student构造函数。</p>
+<p>原型模型创建对象的局限性<br>原型模型在对象实例共享数据方面给我们带来了很大的便利，但通常情况下不同的实例会希望拥有属于自己单独的属性。我们将构造函数模型和原型模型结合使用即可兼得数据共享和”不共享”。</p>
+<p>构造与原型混合模式创建对象<br>我们结合原型模式在共享方法属性以及构造函数模式在实例方法属性方面的优势，使用以下的方法创建对象：</p>
+<p>//我们希望每个stu拥有属于自己的name和age属性<br>function Student(name, age) {<br>  this.name = name;<br>  this.age = age;<br>}</p>
+<p>//所有的stu应该共享一个alertName()方法<br>Student.prototype = {<br>  constructor : Student,<br>  alertName : function() {<br>                alert(this.name);<br>              }<br>}</p>
+<p>var stu1 = new Student(“Jim”, 20);<br>var stu2 = new Student(“Tom”, 21);</p>
+<p>stu1.alertName();  //Jim  实例属性<br>stu2.alertName();  //Tom  实例属性</p>
+<p>alert(stu1.alertName == stu2.alertName);  //true  共享函数</p>
+<p>以上，在构造函数中定义实例属性，在原型中定义共享属性的模式，是目前使用最广泛的方式。通常情况下，我们都会默认使用这种方式来定义引用类型变量。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/js%E5%8E%9F%E5%9E%8B%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/13/js%E5%8E%9F%E5%9E%8B%E7%AC%94%E8%AE%B0/" itemprop="url">js原型笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-13T01:01:45+08:00">
+                2019-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Array.prototype  属性表示 Array 构造函数的原型，并允许您向所有Array对象添加新的属性和方法。</p>
+<p>/*<br>如果JavaScript本身不提供 first() 方法，<br>添加一个返回数组的第一个元素的新方法。<br>*/ </p>
+<p>if(!Array.prototype.first) {<br>    Array.prototype.first = function() {<br>        console.log(<code>如果JavaScript本身不提供 first() 方法，
+添加一个返回数组的第一个元素的新方法。</code>);<br>        return this[0];<br>    }<br>}<br>描述<br>Array实例继承自 Array.prototype 。与所有构造函数一样，您可以更改构造函数的原型对象，以对所有 Array 实例进行更改。例如，可以添加新方法和属性以扩展所有Array对象。这用于 polyfilling， 例如。</p>
+<p>鲜为人知的事实：Array.prototype 本身也是一个 Array。</p>
+<p>Array.isArray(Array.prototype);<br>// true<br>Array.prototype 属性的属性特性：<br>writable    false<br>enumerable    false<br>configurable    false<br>属性<br>Array.prototype.constructor<br>所有的数组实例都继承了这个属性，它的值就是 Array，表明了所有的数组都是由 Array 构造出来的。<br>Array.prototype.length<br>上面说了，因为 Array.prototype 也是个数组，所以它也有 length 属性，这个值为 0，因为它是个空数组。<br>方法<br>会改变自身的方法<br>下面的这些方法会改变调用它们的对象自身的值：</p>
+<p>Array.prototype.copyWithin()<br>在数组内部，将一段元素序列拷贝到另一段元素序列上，覆盖原有的值。<br>Array.prototype.fill()<br>将数组中指定区间的所有元素的值，都替换成某个固定的值。<br>Array.prototype.pop()<br>删除数组的最后一个元素，并返回这个元素。<br>Array.prototype.push()<br>在数组的末尾增加一个或多个元素，并返回数组的新长度。<br>Array.prototype.reverse()<br>颠倒数组中元素的排列顺序，即原先的第一个变为最后一个，原先的最后一个变为第一个。<br>Array.prototype.shift()<br>删除数组的第一个元素，并返回这个元素。<br>Array.prototype.sort()<br>对数组元素进行排序，并返回当前数组。<br>Array.prototype.splice()<br>在任意的位置给数组添加或删除任意个元素。<br>Array.prototype.unshift()<br>在数组的开头增加一个或多个元素，并返回数组的新长度。<br>不会改变自身的方法<br>下面的这些方法绝对不会改变调用它们的对象的值，只会返回一个新的数组或者返回一个其它的期望值。</p>
+<p>Array.prototype.concat()<br>返回一个由当前数组和其它若干个数组或者若干个非数组值组合而成的新数组。<br>Array.prototype.includes()<br>判断当前数组是否包含某指定的值，如果是返回 true，否则返回 false。<br>Array.prototype.join()<br>连接所有数组元素组成一个字符串。<br>Array.prototype.slice()<br>抽取当前数组中的一段元素组合成一个新数组。<br>Array.prototype.toSource()<br>返回一个表示当前数组字面量的字符串。遮蔽了原型链上的 Object.prototype.toSource() 方法。<br>Array.prototype.toString()<br>返回一个由所有数组元素组合而成的字符串。遮蔽了原型链上的 Object.prototype.toString() 方法。<br>Array.prototype.toLocaleString()<br>返回一个由所有数组元素组合而成的本地化后的字符串。遮蔽了原型链上的 Object.prototype.toLocaleString() 方法。<br>Array.prototype.indexOf()<br>返回数组中第一个与指定值相等的元素的索引，如果找不到这样的元素，则返回 -1。<br>Array.prototype.lastIndexOf()<br>返回数组中最后一个（从右边数第一个）与指定值相等的元素的索引，如果找不到这样的元素，则返回 -1。<br>遍历方法<br>在下面的众多遍历方法中，有很多方法都需要指定一个回调函数作为参数。在每一个数组元素都分别执行完回调函数之前，数组的length属性会被缓存在某个地方，所以，如果你在回调函数中为当前数组添加了新的元素，那么那些新添加的元素是不会被遍历到的。此外，如果在回调函数中对当前数组进行了其它修改，比如改变某个元素的值或者删掉某个元素，那么随后的遍历操作可能会受到未预期的影响。总之，不要尝试在遍历过程中对原数组进行任何修改，虽然规范对这样的操作进行了详细的定义，但为了可读性和可维护性，请不要这样做。</p>
+<p>Array.prototype.forEach()<br>为数组中的每个元素执行一次回调函数。<br>Array.prototype.entries()<br>返回一个数组迭代器对象，该迭代器会包含所有数组元素的键值对。<br>Array.prototype.every()<br>如果数组中的每个元素都满足测试函数，则返回 true，否则返回 false。<br>Array.prototype.some()<br>如果数组中至少有一个元素满足测试函数，则返回 true，否则返回 false。<br>Array.prototype.filter()<br>将所有在过滤函数中返回 true 的数组元素放进一个新数组中并返回。<br>Array.prototype.find()<br>找到第一个满足测试函数的元素并返回那个元素的值，如果找不到，则返回 undefined。<br>Array.prototype.findIndex()<br>找到第一个满足测试函数的元素并返回那个元素的索引，如果找不到，则返回 -1。<br>Array.prototype.keys()<br>返回一个数组迭代器对象，该迭代器会包含所有数组元素的键。<br>Array.prototype.map()<br>返回一个由回调函数的返回值组成的新数组。<br>Array.prototype.reduce()<br>从左到右为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。<br>Array.prototype.reduceRight()<br>从右到左为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。<br>Array.prototype.values()<br>返回一个数组迭代器对象，该迭代器会包含所有数组元素的值。<br>Array.prototype<a href="">@@iterator</a><br>和上面的 values() 方法是同一个函数。<br>通用方法<br>在 JavaScript 中，很多的数组方法被故意设计成是通用的。也就是说，那些看起来像是数组的对象（类数组对象），即拥有一个 length 属性，以及对应的索引属性（也就是数字类型的属性，比如 obj[5]）的非数组对象也是可以调用那些数组方法的。其中一些数组方法，比如说 join 方法，它们只会单纯的读取当前对象的 length 属性和索引属性的值，并不会尝试去改变这些属性的值。而另外一些数组方法，比如说 reverse 方法，它们会尝试修改那些属性的值，因此，如果当前对象是个 String 对象，那么这些方法在执行时就会报错，因为字符串对象的 length 属性和索引属性都是只读的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/01/%E5%85%B3%E4%BA%8Egithub%E5%88%9B%E5%BB%BA%E5%AF%86%E9%92%A5%E7%9A%84%E9%93%BE%E6%8E%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/01/%E5%85%B3%E4%BA%8Egithub%E5%88%9B%E5%BB%BA%E5%AF%86%E9%92%A5%E7%9A%84%E9%93%BE%E6%8E%A5/" itemprop="url">关于github创建密钥的链接</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-01T15:58:15+08:00">
+                2019-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.jianshu.com/p/4196de064378" target="_blank" rel="noopener">https://www.jianshu.com/p/4196de064378</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/28/%E5%85%B3%E4%BA%8Evue%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/28/%E5%85%B3%E4%BA%8Evue%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E8%AF%B4%E6%98%8E/" itemprop="url">关于vue更新后的说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-28T15:31:51+08:00">
+                2019-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。<br>本文链接：<a href="https://blog.csdn.net/sxs7970/article/details/88826248" target="_blank" rel="noopener">https://blog.csdn.net/sxs7970/article/details/88826248</a><br>在用 webpack 的时候，要处理分离出来的 .vue 文件，需要借助第三方的loader。</p>
+<p>安装第三方loader<br>cnpm i vue-loader vue-template-compiler -D</p>
+<p>一个解析以.vue后缀的文件，后边是解析template模板的。</p>
+<p>在webpack的配置文件webpack.config.js中配置loader配置项<br>{<br>    test:/.vue$/,<br>    use:’vue-loader’  //处理 .vue 文件的 loader<br>}<br>1<br>2<br>3<br>4<br>这个时候运行，发现还是报错，例如：</p>
+<p>ReferenceError: VueLoaderPlugin is not defined<br>vue-loader was used without the corresponding plugin. Make sure to include VueLoaderPlugin in your webpack config.<br>解决方案<br>遇到上边的错，不用慌，还缺少两个配置。因为在<a href="mailto:vue-loader@15.x" target="_blank" rel="noopener">vue-loader@15.x</a> 版本，有些东西必须要配置。</p>
+<p>打开webpack的配置文件 webpack.config.js：</p>
+<p>//这两个随便引入一个就行</p>
+<p>const VueLoaderPlugin = require(‘vue-loader/lib/plugin’);<br>或者<br>const { VueLoaderPlugin } = require(‘vue-loader’);<br>1<br>2<br>3<br>4<br>5<br>然后还在此文件中配置 plugins 节点</p>
+<p>plugins:[<br>    new VueLoaderPlugin()<br>]<br>1<br>2<br>3<br>解决方案2<br>//安装指定版本的loader，就不用配置以上内容<br>cnpm i <a href="mailto:vue-loader@14.1.1" target="_blank" rel="noopener">vue-loader@14.1.1</a> vue-template-compiler@2.5.17 -D<br>1<br>2</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「sxs7970」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/sxs7970/article/details/88826248" target="_blank" rel="noopener">https://blog.csdn.net/sxs7970/article/details/88826248</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/%E5%85%B3%E4%BA%8Ebabel%E6%9B%B4%E6%96%B0%E7%9A%84%E7%94%A8%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/27/%E5%85%B3%E4%BA%8Ebabel%E6%9B%B4%E6%96%B0%E7%9A%84%E7%94%A8%E6%B3%95/" itemprop="url">关于babel更新的用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-27T17:42:24+08:00">
+                2019-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Plugin/Preset files are not allowed to export objects，webpack报错/babel报错的解决方法</p>
+<p>1、为什么会报错 ？<br>　　这里抱着错误是因为 babel 的版本冲突。</p>
+<p>　　多是因为你的 babel 依赖包不兼容。</p>
+<p>　　可以查看你的 package.json 的依赖列表</p>
+<p>　　即有 babel 7.0 版本的( @babel/core ， @babel/preset-react )</p>
+<p>　　也可命令查看 bebel-cli 的版本 （ babel -V ）</p>
+<p>　　也有 babel 6.0 版本的 ( <a href="mailto:babel-core@6.26.0" target="_blank" rel="noopener">babel-core@6.26.0</a> , <a href="mailto:babel-cli@6.26.0" target="_blank" rel="noopener">babel-cli@6.26.0</a> , <a href="mailto:babel-preset-react@6.24.1" target="_blank" rel="noopener">babel-preset-react@6.24.1</a> )</p>
+<p>　　</p>
+<p>　　如果在你的 package.json 依赖包中既有 babel 7.0 版本，又有 babel 6.0 版本，就会报这个错误</p>
+<p>　　很现实就是两个版本是不兼容的</p>
+<p>2、处理方法</p>
+<p>　　1、升级到 babel 7.0</p>
+<p>　　</p>
+<p>　　将所有有关 babel 的包都升级为 7.0 版本</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>“@babel/core”: “^7.0.0-beta.40”,<br>“@babel/cli”: “^7.0.0-beta.40”,<br>“babel-loader”: “^8.0.0-beta.0”,<br>“babel-plugin-lodash”: “^3.3.2”,<br>“babel-plugin-react-transform”: “^3.0.0”,<br>“@babel/preset-react”: “^7.0.0-beta.40”,<br>“@babel/preset-stage-0”:’^7.0.0’
+　　</p>
+<p>　　并且修改 .babelrc 文件</p>
+<p>　　对应的修改  presets 预设和 plugins 都改为 7.0 形式。</p>
+<p>1<br>2<br>3<br>4<br>query: {<br>   presets: [‘@babel/react’, ‘@babel/stage-0’],<br>   plugins: [‘’]<br> }
+　　</p>
+<p>　　2、降级到 babel 6.0 版本</p>
+<p>　　</p>
+<p>　　有时候我们看们的 package.json 里面都是 babel 6.0 版本的。</p>
+<p>　　如下：</p>
+<p>　　</p>
+<p>1<br>2<br>3<br>4<br>5<br>“babel-core”: “^6.26.0”,<br>“babel-loader”: “^7.1.2”,<br>“babel-plugin-transform-runtime”: “^6.23.0”,<br>“babel-preset-env”: “^1.6.1”,<br>“babel-preset-stage-0”: “^6.24.1”,<br>　　但是还是报错，为什么呢？</p>
+<p>　　你不妨把 node_modules 删掉，重新 install ，这样就可以处理一部分兼容问题</p>
+<p>　　如果上面的方法还是不行。</p>
+<p>　　你可以查看一下 babel-cli 的版本</p>
+<p>1<br>babel -V<br>　　如果是 babel-cli 7.0 版本。</p>
+<p>　　</p>
+<p>　　那你就重新安装全局和本地的 babel-cli 版本为 6.0</p>
+<p>1<br>2<br>3<br>npm install -g <a href="mailto:babel-cli@6.26.0" target="_blank" rel="noopener">babel-cli@6.26.0</a></p>
+<p>yarn add <a href="mailto:babel-cli@6.26.0" target="_blank" rel="noopener">babel-cli@6.26.0</a>
+　　</p>
+<p>　　</p>
+<p>　　基本上面两个方法可以解决所有兼容问题。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/%E5%85%B3%E4%BA%8EAJAX%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/13/%E5%85%B3%E4%BA%8EAJAX%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">关于AJAX的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T12:54:20+08:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Ajax<br>Ajax 全称是 asynchronous javascript and xml，并不是新的编程语言，可以说是已有技术的组合，主要用来实现客户端与服务器端的异步通信效果，实现页面的局部刷新，从而创建快速动态网页的技术。</p>
+<p>Ajax过程</p>
+<ul>
+<li>创建XMLHttpRequest对象,也就是创建一个异步调用对象</li>
+<li>创建一个新的HTTP请求,并指定其请求的方法、URL及验证信息</li>
+<li>设置响应 HTTP 请求状态变化的函数</li>
+<li>发送 HTTP 请求</li>
+<li>获取异步调用返回的数据</li>
+<li>使用 JavaScript 和 DOM 实现局部刷新<br>var xhr = null; // 创建异步对象<br>if(window.XMLHttpRequest){<br>xhr = new XMLHttpRequest(); // ie7+等现代浏览器<br>}else if(window.ActiveXObject){ // ie6，老版Opera<br>xhr = new ActiveXObject(‘Microsft.XMLHTTP’);<br>}<br>xhr.open(‘get’,’<a href="http://localhost:4000/test&#39;,true" target="_blank" rel="noopener">http://localhost:4000/test&#39;,true</a>); // true是异步，可省略<br>xhr.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”); // post 必须设置<br>xhr.onreadystatechange = function(){ // 若为同步，此代码不用写，直接在send后，用<code>xhr.responseText</code>即可。<br> if(xhr.readyState==4 &amp;&amp; xhr.status==200){<br> /*<br> readyState<pre><code>0: 请求未初始化
+1: 服务器连接已建立
+2: 请求已接收
+3: 请求处理中
+4: 请求已完成，且响应已就绪</code></pre> status<pre><code>200 OK
+404 Not Found</code></pre> */<br>   xhr.responseText;<br>   xhr.responseXML.children[0].children;<br>   JSON.parse(xhr.responseText);<br> }<br>}<br>xhr.send(String); // 用于post传参，形式：”a=1&amp;b=2”，而get传参就在url后面用“?”拼接<br>优缺点<br>优点：可以使得页面不重载全部内容的情况下加载局部内容，降低数据传输量，避免用户不断刷新或者跳转页面，提高用户体验<br>缺点：对搜索引擎不友好，要实现ajax下的前进后退功能成本较大；跨域问题限制<br>jQuery 中的 Ajax<br>全局ajax事件处理器<br>jQuery 库支持完整的 Ajax 操作。这里所包含的所有函数和方法用于从服务端加载数据，并且不会导致页面刷新。</li>
+</ul>
+<p>$(document).ajaxComplete(handler(event, XMLHttpRequest, ajaxOptions)) 当Ajax请求完成后注册一个回调函数。</p>
+<p>每当一个Ajax请求完成，jQuery就会触发ajaxComplete事件，在这个时间点所有处理函数会使用.ajaxComplete()方法注册并执行。<br>从 jQuery 1.8 开始, .ajaxComplete() 方法只能绑定到 document元素。<br>如果global选项设置为false，调用$.ajax() 或 $.ajaxSetup(),.ajaxComplete()方法将不会被触发。<br>类似的还有：请求出错ajaxError()、请求发送前ajaxSend()、请求刚开始ajaxStart()、请求完成时ajaxStop()、请求成功完成时ajaxSuccess()<br>辅助函数<br>$.param() 创建一个数组或对象序列化的字符串，适用于一个URL地址查询字符串或Ajax请求。此方法无法对复杂数据结构进行编码。<br>serialize() 将用作提交的表单元素的值编译成字符串。</p>
+<form action="#">
+    <input name="username" value="abc">
+    <input name="age" value="24">
+    <select name="sex">
+        <option value="0">女</option>
+        <option value="1">男</option>
+    </select>
+    <input type="submit" value="提交">
+</form>
+
+<p>console.log($(“form”).serialize()); // username=abc&amp;age=24&amp;sex=0<br>serializeArray() 将用作提交的表单元素的值编译成拥有name和value对象组成的数组。<br>console.log($(“form”).serializeArray()); // [{name: “username”, value: “abc”}, {name: “age”, value: “24”}, {name: “sex”, value: “0”}]</p>
+<p>底层接口<br>$.ajax(url, {})或$.ajax({url: “”}) 关于传参项（可以使用$.ajaxSetup()设置任何默认参数），下面列举一些常用的：</p>
+<p>url：String，一个用来包含发送请求的URL字符串<br>data：Object、String，发送到服务器的数据。将自动转换为请求字符串格式。GET 请求中将附加在 URL 后面。<br>dataType：String，默认Intelligent Guess (xml, json, script, or html))。预期服务器返回的数据类型。</p>
+<p>xml，html，script，json，text<br>jsonp: 以 JSONP 的方式载入 JSON 数据块。会自动在所请求的URL最后添加 “?callback=?”。默认情况下不会通过在URL中附加查询字符串变量 “<em>=[TIMESTAMP]” 进行自动缓存结果，除非将 cache参数设置为true。<br>accepts：PlainObject（可用$.isPlainObject()检测），内容类型发送请求头（Content-Type），用于通知服务器该请求需要接收何种类型的返回结果。如果accepts设置需要修改，推荐在$.ajaxSetup() 方法中设置一次。<br>async：Boolean，默认true，异步请求<br>global：Boolean，默认true。该请求是否触发全局处理事件（如$(document).ajaxComplete()等）<br>beforeSend(jqXHR, settings)：Function，请求发送前的回调函数，用来修改请求发送前jqXHR，此功能可用来设置自定义 HTTP 头信息，在beforeSend函数中返回false将取消这个请求。<br>catch：Boolean，默认true，dataType为”script”和”jsonp”时默认为false。是否缓存此页面，原理是在GET请求参数中附加”</em>=时间戳”。该参数不是其他请求所必须的，除了在IE8中，当一个POST请求一个已经用GET请求过的URL。<br>complete：Function，请求完成后回调函数 (请求success 和 error之后均调用)。<br>success(data, textStatus, jqXHR)：Function，请求成功时调用函数<br>error：Function，请求失败时调用函数<br>timeout：Number，设置请求超时时间（毫秒）。此设置将覆盖$.ajaxSetup() 里的全局设置。<br>jsonp：String，在一个jsonp请求中重写回调函数的名字。这个值用来替代在”callback=?”这种GET或POST请求中URL参数里的”callback”部分，比如{jsonp:’onJsonPLoad’}会导致将”onJsonPLoad=?”传给服务器。在jQuery 1.5，，设置jsonp选项为false，阻止了jQuery从加入”?callback”字符串的URL或试图使用”=?”转换。在这种情况下，你也应该明确设置jsonpCallback设置。例如, { jsonp: false, jsonpCallback: “callbackName” }<br>jsonpCallback：String、Function，为jsonp请求指定一个回调函数名。这个值将用来取代jQuery自动生成的随机函数名。这主要用来让jQuery生成一个独特的函数名，这样管理请求更容易，也能方便地提供回调函数和错误处理。你也可以在想让浏览器缓存GET请求的时候，指定这个回调函数名。从jQuery 1.5开始，你也可以使用一个函数作为该参数设置，在这种情况下，该函数的返回值就是jsonpCallback的结果。<br>contents： PlainObject，一个以”{字符串/正则表达式}”配对的对象，根据给定的内容类型，解析请求的返回结果。<br>contentType：String，默认application/x-www-form-urlencoded; charset=UTF-8。发送信息至服务器时内容编码类型。<br>context：Object，设置Ajax相关回调函数的上下文。即改变回调函数的this，默认就是传入的整个对象。<br>converters： PlainObject，默认: {“* text”: window.String, “text html”: true, “text json”: jQuery.parseJSON, “text xml”: jQuery.parseXML}。一个数据类型到数据类型转换器的对象。每个转换器的值是一个函数，返回经转换后的请求结果。<br>crossDomain：Boolean，同域请求为false， 跨域请求为true。如果你想在同一域中强制跨域请求（如JSONP形式），例如，想服务器端重定向到另一个域，那么需要将crossDomain设置为 true 。<br>username：String，于响应HTTP访问认证请求的用户名<br>password：String，用于响应HTTP访问认证请求的密码<br>$.ajax() 返回jqXHR对象，可调用</p>
+<p>.done() success<br>.fail() error<br>.always() complete<br>.then() 传两个回调函数，分别是done和fail<br>$.ajaxPrefilter([dataTypes], handler(options, originalOptions, jqXHR) ) 在每个请求之前被发送和$.ajax()处理它们前处理，设置自定义Ajax选项或修改现有选项。<br>$.ajaxSetup(options) 为以后要用到的Ajax请求设置默认的值，其后的 AJAX 请求不再设置任何已设置的选项参数。<br>快捷方法<br>$.get() {type: “get”}<br>$.post() {type: “post”}<br>$.getScript() {type: “script”}<br>$.getJSON() {type: “json”}<br>$(selector).load() 从服务器载入数据并且将返回的 HTML 代码并插入至 匹配的元素中。<br>jQuery中jsonp<br>// 前端<br>function jsonpFn(data){<br>    console.log(data)<br>    console.log(“jsonpFn”);<br>}<br>$(function(){<br>    $.ajax({<br>        url: “<a href="http://localhost:3000/test&quot;" target="_blank" rel="noopener">http://localhost:3000/test&quot;</a>,<br>        data: {username: “xx”},<br>        dataType: “jsonp”,<br>        jsonp: “selfNamedReplaceCallback”,<br>        jsonpCallback: “jsonpFn”, // server side：req.query.callback = “jsonpFn”<br>        success(data){<br>            console.log(data)<br>        }<br>    })<br>})</p>
+<p>// 后端<br>const app = require(‘express’).Router();<br>app.get(‘/test’, (req, res, next) =&gt; {<br>    let name = req.query.username;<br>    let callback = req.query.selfNamedReplaceCallback<br>    let s1 = “{status: 1}”<br>    let s2 = <code>{
+            status: 0,
+            info: {
+                name: &quot;${name}&quot;,
+                age: 24,
+                sex: &quot;girl&quot;,
+                tel: &quot;1522*******&quot;
+            }
+        }</code><br>    s1=callback+”(“+s1+”)”<br>    s2=callback+”(“+s2+”)”<br>    if(!name)return res.send(s1)<br>    res.send(s2)<br>}).listen(3000)<br>Axios<br>axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。<br>从浏览器中创建 XMLHttpRequests<br>从 node.js 创建 http 请求<br>支持 Promise API<br>拦截请求和响应<br>转换请求数据和响应数据<br>取消请求<br>自动转换 JSON 数据<br>客户端支持防御 XSRF<br>在vue项目中使用axios 的 Demo<br>// main.js<br>import axios from ‘axios’<br>axios.defaults.baseURL = ‘<a href="http://localhost/&#39;" target="_blank" rel="noopener">http://localhost/&#39;</a><br>Vue.prototype.$axios = axios<br>// 在 .vue 文件（组件）<br>this.$axios.get(“”).then().catch()</p>
+<p>this.$axios.all([<br>    this.$axios.post(‘one’,’content=123’),<br>    this.$axios.get(‘one?pageIndex=1’)<br>])<br>.then(this.$axios.spread((res1,res2)=&gt;{<br>    console.log(res1,res2)<br>}))<br>.catch(err=&gt;{<br>    console.log(err)<br>})<br>这里分发请求，同时请求成功才执行 then 方法，可用于获取 省市区 的数据</p>
+<p>// 在 server.js 文件<br>const Koa = require(‘koa’)<br>const Router = require(‘koa-router’)<br>const app = new Koa()<br>const router = new Router()<br>router.get(‘/one’,ctx=&gt;{<br>    ctx.body = {<br>        a: 1,<br>        b: 2<br>    }<br>})<br>router.post(‘/one’,ctx=&gt;{<br>    ctx.body = {<br>        c: 3,<br>        d: 4<br>    }<br>})</p>
+<p>app.use((ctx,next)=&gt;{<br>    ctx.set(“Access-Control-Allow-Origin”, “*”);<br>    ctx.body = {}<br>    next()<br>})<br>.use(router.routes())<br>.use(router.allowedMethods())<br>.listen(80)<br>拦截器<br>axios.interceptors.request.use(function(ops){<br>    console.log(ops);<br>    ops.headers = {/* … */}; // 请求前修改<br>    return ops; // 返回没有修改的位置，如果return false 直接拦截<br>})<br>例如，在请求成功前显示加载loading图标，拿到数据后消失</p>
+<p>// main.js<br>import Mint from ‘mint-ui’ // 实际项目中选择引入<br>import ‘mint-ui/lib/style.css’<br>Vue.use(Mint)</p>
+<p>axios.interceptors.request.use(function(config){<br>    Mint.Indicator.open()<br>    return config;<br>})<br>axios.interceptors.response.use(function(data){<br>    Mint.Indicator.close()<br>    return data;<br>})<br>Ajax、jQuery.ajax、Axios和Fetch的区别<br>ajax最早出现的发送后端请求技术，利用用XMLHttpRequest对象。<br>$.ajax是jQuery中的发送后端请求技术，基于原生Ajax的封装。<br>Axios不是原生JS的，需要进行安装。它在client-side和server-side都可以使用。也可以在请求和响应阶段进行拦截。它是基于promise对象的。<br>Fetch号称是AJAX的替代品，使用了ES6中的promise对象。其参数有点像jQuery.ajax。但是fetch不是对ajax的封装，而是原生js实现的，并没有使用XMLHttpRequest对象。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/%E5%85%B3%E4%BA%8Ewebpack-plugin%E5%B1%9E%E6%80%A7%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="juvenile">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="juvenile的四维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/06/%E5%85%B3%E4%BA%8Ewebpack-plugin%E5%B1%9E%E6%80%A7%E9%97%AE%E9%A2%98/" itemprop="url">关于webpack-plugin属性问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T17:13:11+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于webpack-Plugin配置问题<br>1.webpack里的plugin属性一定要是小写，不然会一直报未识别到Plugin属性错误<br>2.如果出现npm error问题那就是安装包缺损，重新删掉安装包，然后下载，最后运行即可！！！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/%E5%85%B3%E4%BA%8Egithub%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -500,303 +1758,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/%E5%85%B3%E4%BA%8Ewebpack%E5%8D%87%E7%BA%A7%E5%90%8E%E7%9A%84%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="juvenile">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="juvenile的四维空间">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/24/%E5%85%B3%E4%BA%8Ewebpack%E5%8D%87%E7%BA%A7%E5%90%8E%E7%9A%84%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/" itemprop="url">关于webpack升级后的操作说明</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T14:46:38+08:00">
-                2019-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这个问题是由于webpack升级导致的，在最新的webpack4中，要想将hello.js打包到hello.bundle.js,要使用如下命令：</p>
-<p>webpack hello.js -o hello.bundle.js –mode development</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/%E5%85%B3%E4%BA%8Esourcemap%E7%9A%84%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="juvenile">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="juvenile的四维空间">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/24/%E5%85%B3%E4%BA%8Esourcemap%E7%9A%84%E4%BB%8B%E7%BB%8D/" itemprop="url">关于sourcemap的介绍</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T13:58:22+08:00">
-                2019-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Source Map入门教程<br>Fundebug<br>Fundebug<br>一行代码搞定BUG监控：<a href="http://www.fundebug.com" target="_blank" rel="noopener">www.fundebug.com</a><br>Source Map入门教程 - Fundebug - 博客园</p>
-<p>部署前端之前，开发者通常会对代码进行打包压缩，这样可以减少代码大小，从而有效提高访问速度。然而，压缩代码的报错信息是很难Debug的，因为它的行号和列号已经失真。这时就需要Source Map来还原真实的出错位置了。</p>
-<p>为啥变换代码？</p>
-<p>前端代码越来越复杂的情况下，开发者通常会使用webpack、UglifyJS2等工具对代码进行打包变换，这样可以减少代码大小，有效提高访问速度。关于变换代码的原因，这里不妨引用一下大神阮一峰的JavaScript Source Map 详解:</p>
-<p>压缩，减小体积。比如jQuery 1.9的源码，压缩前是252KB，压缩后是32KB。<br>多个文件合并，减少HTTP请求数。<br>其他语言编译成JavaScript。最常见的例子就是CoffeeScript。</p>
-<p>如何变换代码？</p>
-<p>下面是一个简单的“hello World”程序hello.js</p>
-<p>function sayHello()<br>{<br>    var name = “Fundebug”;<br>    var greeting = “Hello, “ + Name;<br>    console.log(greeting);<br>}</p>
-<p>sayHello();</p>
-<p>使用UglifyJS2对源代码进行压缩变换:</p>
-<p>uglifyjs hello.js <br>         -m toplevel=true <br>         -c unused=true,collapse_vars=true <br>         -o hello.min.js<br>压缩后的代码hello.min.js</p>
-<p>function o(){var o=”Hello, “+Name;console.log(o)}o();</p>
-<p>为啥需要Source Map?</p>
-<p>使用Firefox执行hello.js的报错信息是这样:</p>
-<p>ReferenceError: Name is not defined<br>    sayHello file:///Users/fundebug/sourcemap-tutorial/hello.js:4:9<br>    &lt;匿名&gt; file:///Users/fundebug/sourcemap-tutorial/hello.js:8:1</p>
-<p>而hello.min.js的报错信息是这样:</p>
-<p>ReferenceError: Name is not defined<br>    o file:///Users/fundebug/sourcemap-tutorial/hello.min.js:1:18<br>    &lt;匿名&gt; file:///Users/fundebug/sourcemap-tutorial/hello.min.js:1:59</p>
-<p>对比压缩前后的出错信息，我们会发现，错误行号和列号已经失真，且函数名也经过了变换。而对于真实的前端项目，开发者会将数十个源文件压缩为一个文件，这时，错误的列号可能多达数千，且出错的真实文件名也是很难确定的，这样的话，压缩代码的报错信息是很难Debug的。</p>
-<p>而Source Map则可以用于还原真实的出错位置，帮助开发者更快的Debug。</p>
-<p>什么是Source Map?</p>
-<p>使用UglifyJS2时指定source-map选项即可生成Source Map:</p>
-<p>uglifyjs hello.js <br>         -m toplevel=true <br>         -c unused=true,collapse_vars=true <br>         –source-map hello.min.js.map <br>         –source-map-include-sources <br>         –source-map-root <br>         -o hello.min.js</p>
-<p>各种主流前端任务管理工具，打包工具都支持生成Source Map，具体可以查看生成Source Map - Fundebug文档。</p>
-<p>生成的hello.min.js多了sourceMappingURL，表示Source Map文件的位置。</p>
-<p>function o(){var o=”Hello, “+Name;console.log(o)}o();<br>//# sourceMappingURL=hello.min.js.map</p>
-<p>生成的Source Map为hello.min.js.map:</p>
-<p>{<br>    “version”: 3,<br>    “sources”: [“hello.js”],<br>    “names”: [“sayHello”, “greeting”, “Name”, “console”, “log”],<br>    “mappings”: “AAAA,QAASA,KAEL,GACIC,GAAW,UAAYC,IAC3BC,SAAQC,IAAIH,GAGhBD”,<br>    “file”: “hello.min.js”,<br>    “sourceRoot”: “”,<br>    “sourcesContent”: [“function sayHello()\n{\n    var name = &quot;Fundebug&quot;;\n    var greeting = &quot;Hello, &quot; + Name;\n    console.log(greeting);\n}\n\nsayHello();\n”]<br>}</p>
-<p>由hello.min.js.map可知，Source Map是一个JSON文件，而它包含了代码转换前后的位置信息。也就是说，给定一个转换之后的压缩代码的位置，就可以通过Source Map获取转换之前的代码位置，反过来也一样。Source Map各个属性的含义如下:</p>
-<p>version：Source Map的版本号。<br>sources：转换前的文件列表。<br>names：转换前的所有变量名和属性名。<br>mappings：记录位置信息的字符串，经过编码。<br>file：(可选)转换后的文件名。<br>sourceRoot：(可选)转换前的文件所在的目录。如果与转换前的文件在同一目录，该项为空。<br>sourcesContent:(可选)转换前的文件内容列表，与sources列表依次对应。<br>Source Map真正神奇之处在于mappings属性，它记录了位置是如何对应的。JavaScript Source Map 详解已经有很好的解释，这里不再赘述。</p>
-<p>怎样使用Source Map?</p>
-<p>主流浏览器均支持Source Map功能，不过Chrome与Firefox需要一些简单的配置，具体步骤请参考How to enable source maps。下面以MacBook上的Chrome浏览器为例，介绍一下配置方法:</p>
-<ol>
-<li>开启开发者工具<br>使用快捷键option + command + i；或者在菜单栏选择视图-&gt;开发者-&gt;开发者工具</li>
-</ol>
-<ol start="2">
-<li>打开设置<br>使用快捷键fn + F1；或者点击右上角的三个点的图标，选择Settings</li>
-</ol>
-<ol start="3">
-<li>开启Source Map<br>在Sources中，选中Enable JavaScript source maps</li>
-</ol>
-<p>为了测试，我写了一个简单的HTML文件hello.min.html</p>
-<head>
-    <script type="text/javascript" src="hello.min.js"></script>
-</head>
-
-<p>使用Chrome打开hello.min.html，在控制台看到的错误如下:</p>
-<p>Uncaught ReferenceError: Name is not defined<br>    at o (hello.min.js:1)<br>    at hello.min.js:1</p>
-<p>报错的文件仍然为hello.min.js，需要刷新一下Source Map才有作用:</p>
-<p>Uncaught ReferenceError: Name is not defined<br>    at o (hello.js:4)<br>    at hello.js:8</p>
-<p>注意，Chrome的报错信息没有列号，因此4为错误的行号。Chrome不仅可以通过Source Map还原真实的出错位置，还可以根据Source Map的sourcesContent还原出错的源代码。点击出错位置，即可跳转到源码，这样Debug将非常方便。</p>
-<p>参考链接<br>JavaScript Source Map 详解<br>Source Map Revision 3 Proposal<br>How to enable source maps<br>关于Fundebug<br>Fundebug专注于JavaScript、微信小程序、微信小游戏、支付宝小程序、React Native、Node.js和Java实时BUG监控。 自从2016年双十一正式上线，Fundebug累计处理了6亿+错误事件，得到了Google、360、金山软件等众多知名用户的认可。欢迎免费试用！</p>
-<p>版权声明<br>转载时请注明作者Fundebug以及本文地址：</p>
-<p><a href="https://blog.fundebug.com/" target="_blank" rel="noopener">https://blog.fundebug.com/</a> 2017/03/13/sourcemap-tutorial/</p>
-<p>发布于 2018-09-17</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
 
 
           </div>
@@ -840,7 +1808,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -881,7 +1849,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
